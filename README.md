@@ -1,2 +1,7 @@
 # code-achivements
-Some code, that i am pretty much satisfied with.
+Some of my solutions to my most-common front end problems.
+
+Table of contents:
+* HTML
+* CSS
+* JavaScript
