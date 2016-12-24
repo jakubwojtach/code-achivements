@@ -1,3 +1,13 @@
+/*
+@desc: Custom Slider for the absolutely positioned slides.
+@author: Jakub Wojtach
+@params: 
+arrowNext - div with the next arrow 
+arrowPrev - div with the previous arrow 
+container - div with all of the slides inside
+className - name of the class(best to use 'active')
+slidesClass - 
+*/
 var slider ={
     init: function(arrowNext, arrowPrev, container, className, slidesClass, controls, content){
         slider.attachNumbers(container, className);
@@ -6,10 +16,15 @@ var slider ={
         slider.fillCaptions(controls ,slidesClass);
         slider.attachNumbersContent(content);
     },
+    /*
+    @desc: Assigning numbers for the slide: 
+    1) next slide
+    2) actual slide
+    3) previous slide
+    */
     attachNumbers: function(container, className){
         var children = $(container).children();
         var length = children.length;
-        //assign next and previous slide number
             children.each(function(index){
                 $(this).attr("data-number", index+1);
                 $(this).attr("data-next",index+2);
@@ -23,6 +38,9 @@ var slider ={
                 } 
         });
     },
+    /*
+    @desc Attaching numbers to the slider controls
+    */
     attachArrowAttrs: function(arrowNext, arrowPrev, container, slidesClass){
         
         var actualSlide = $(slidesClass);
@@ -46,6 +64,9 @@ var slider ={
            $(topParentNext).fadeIn('fast');
         }
     },
+    /*
+    @desc Actions for the slides change
+    */
     switchSlide: function(arrowNext, arrowPrev, container, className, activeClass, controls, content){
        var nextData = $(arrowNext).attr('data-next');
        var prevData = $(arrowPrev).attr('data-prev');   
@@ -70,6 +91,9 @@ var slider ={
             slider.changeContentPrev(activeClass, content);
        });
     },
+    /*
+    @desc Attaching captions for each of the slides from the data name.
+    */
     fillCaptions: function(controls, activeClass){
         var next = $(activeClass).next().attr('data-name');
         var prev = $(activeClass).prev().attr('data-name');
