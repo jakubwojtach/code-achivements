@@ -4,5 +4,6 @@
 #### Table of contents:
  - [custom slider](https://github.com/jakubwojtach/code-achivements/blob/master/custom-slider.js)
  - sticky color changing div (soon)
- more coming soon.
+ 
+ #### more coming soon.
 
